@@ -1,0 +1,7 @@
+scoreboard objectives remove __claimsystem_playerid
+scoreboard objectives remove __claimsystem_data
+scoreboard objectives remove __claimsystem_personnal_id
+scoreboard objectives remove __claimsystem_show_user_claims
+scoreboard objectives remove __claimsystem_claim_here
+scoreboard objectives remove __claimsystem_unclaim_here
+scoreboard objectives remove __claimsystem_autoclaim

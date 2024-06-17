@@ -18,8 +18,12 @@ execute as @r[scores={__claimsystem_playerid=0}] run scoreboard players operatio
 scoreboard players enable @a __claimsystem_show_user_claims
 scoreboard players enable @a __claimsystem_claim_here
 scoreboard players enable @a __claimsystem_unclaim_here
+execute if score AllowAutoclaim __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_autoclaim
 
 execute as @a run function claimsystem:internal/visibility
 
 execute as @a[scores={__claimsystem_claim_here=1}] at @s run function claimsystem:player/claim_personnal_8
 execute as @a[scores={__claimsystem_unclaim_here=1}] at @s run function claimsystem:player/remove_personnal
+
+execute if score AllowAutoclaim __claimsystem_data matches 1 as @a[scores={__claimsystem_autoclaim=1..}] at @s run function claimsystem:player/claim_personnal_8
+execute if score AllowAutoclaim __claimsystem_data matches 1 as @a run title @s[scores={__claimsystem_autoclaim=1..}] actionbar [{"text":"Autoclaim: ","color":"aqua"},{"score":{"objective":"__claimsystem_autoclaim","name":"@s"}}]
