@@ -1,0 +1,1 @@
+tp @s @e[type=minecraft:armor_stand,limit=1,sort=nearest,tag=CLAIM]
