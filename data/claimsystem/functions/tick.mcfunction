@@ -16,14 +16,23 @@ execute as @r[scores={__claimsystem_playerid=0}] run scoreboard players add Play
 execute as @r[scores={__claimsystem_playerid=0}] run scoreboard players operation @s __claimsystem_playerid = PlayerCount __claimsystem_data
 
 scoreboard players enable @a __claimsystem_show_user_claims
-scoreboard players enable @a __claimsystem_claim_here
+execute if score AllowClaim8 __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_claim8_here
+execute if score AllowClaim16 __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_claim16_here
+execute if score AllowClaim32 __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_claim32_here
 scoreboard players enable @a __claimsystem_unclaim_here
 execute if score AllowAutoclaim __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_autoclaim
+execute if score AllowAutoclaim __claimsystem_data matches 1 run scoreboard players enable @a __claimsystem_autoclaim_size
 
 execute as @a run function claimsystem:internal/visibility
 
-execute as @a[scores={__claimsystem_claim_here=1}] at @s run function claimsystem:player/claim_personnal_8
+execute as @a[scores={__claimsystem_claim8_here=1}] at @s if score AllowClaim8 __claimsystem_data matches 1 run function claimsystem:player/claim_personnal_8
+execute as @a[scores={__claimsystem_claim16_here=1}] at @s if score AllowClaim16 __claimsystem_data matches 1 run function claimsystem:player/claim_personnal_16
+execute as @a[scores={__claimsystem_claim32_here=1}] at @s if score AllowClaim32 __claimsystem_data matches 1 run function claimsystem:player/claim_personnal_32
 execute as @a[scores={__claimsystem_unclaim_here=1}] at @s run function claimsystem:player/remove_personnal
 
-execute if score AllowAutoclaim __claimsystem_data matches 1 as @a[scores={__claimsystem_autoclaim=1..}] at @s run function claimsystem:player/claim_personnal_8
-execute if score AllowAutoclaim __claimsystem_data matches 1 as @a run title @s[scores={__claimsystem_autoclaim=1..}] actionbar [{"text":"Autoclaim: ","color":"aqua"},{"score":{"objective":"__claimsystem_autoclaim","name":"@s"}}]
+execute if score AllowAutoclaim __claimsystem_data matches 1 as @a[scores={__claimsystem_autoclaim=1..}] at @s run function claimsystem:player/autoclaim
+execute unless score AllowAutoclaim __claimsystem_data matches 1 run scoreboard players set @a[scores={__claimsystem_autoclaim=1..}] __claimsystem_autoclaim 0
+
+scoreboard players set @a __claimsystem_claim8_here 0
+scoreboard players set @a __claimsystem_claim16_here 0
+scoreboard players set @a __claimsystem_claim32_here 0

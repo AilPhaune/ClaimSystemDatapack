@@ -2,6 +2,10 @@ scoreboard objectives remove __claimsystem_playerid
 scoreboard objectives remove __claimsystem_data
 scoreboard objectives remove __claimsystem_personnal_id
 scoreboard objectives remove __claimsystem_show_user_claims
-scoreboard objectives remove __claimsystem_claim_here
+scoreboard objectives remove __claimsystem_claim8_here
+scoreboard objectives remove __claimsystem_claim16_here
+scoreboard objectives remove __claimsystem_claim32_here
 scoreboard objectives remove __claimsystem_unclaim_here
 scoreboard objectives remove __claimsystem_autoclaim
+scoreboard objectives remove __claimsystem_isadmin
+scoreboard objectives remove __claimsystem_autoclaim_size

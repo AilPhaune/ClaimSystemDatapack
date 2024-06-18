@@ -1,0 +1,19 @@
+scoreboard objectives add __claimsystem_playerid dummy
+
+scoreboard objectives add __claimsystem_data dummy
+
+scoreboard objectives add __claimsystem_personnal_id dummy
+
+scoreboard objectives add __claimsystem_show_user_claims trigger
+
+scoreboard objectives add __claimsystem_claim8_here trigger
+scoreboard objectives add __claimsystem_claim16_here trigger
+scoreboard objectives add __claimsystem_claim32_here trigger
+
+scoreboard objectives add __claimsystem_unclaim_here trigger
+
+scoreboard objectives add __claimsystem_autoclaim trigger
+
+scoreboard objectives add __claimsystem_autoclaim_size trigger
+
+scoreboard objectives add __claimsystem_isadmin dummy

@@ -1,16 +1,7 @@
-scoreboard objectives add __claimsystem_playerid dummy
-
-scoreboard objectives add __claimsystem_data dummy
-
-scoreboard objectives add __claimsystem_personnal_id dummy
-
-scoreboard objectives add __claimsystem_show_user_claims trigger
-
-scoreboard objectives add __claimsystem_claim_here trigger
-
-scoreboard objectives add __claimsystem_unclaim_here trigger
-
-scoreboard objectives add __claimsystem_autoclaim trigger
+function claimsystem:admin/create_scoreboards
 
 scoreboard players set PlayerCount __claimsystem_data 0
 scoreboard players set AllowAutoclaim __claimsystem_data 0
+scoreboard players set AllowClaim8 __claimsystem_data 0
+scoreboard players set AllowClaim16 __claimsystem_data 0
+scoreboard players set AllowClaim32 __claimsystem_data 0

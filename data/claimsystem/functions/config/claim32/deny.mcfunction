@@ -1,0 +1,2 @@
+scoreboard players set AllowClaim32 __claimsystem_data 0
+function claimsystem:admin/config

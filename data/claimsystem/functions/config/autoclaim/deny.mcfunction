@@ -1,0 +1,2 @@
+scoreboard players set AllowAutoclaim __claimsystem_data 0
+function claimsystem:admin/config

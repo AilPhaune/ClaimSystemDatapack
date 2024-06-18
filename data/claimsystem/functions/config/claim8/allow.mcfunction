@@ -1,0 +1,2 @@
+scoreboard players set AllowClaim8 __claimsystem_data 1
+function claimsystem:admin/config

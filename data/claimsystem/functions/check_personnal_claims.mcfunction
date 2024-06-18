@@ -1,8 +1,15 @@
 tag @e remove IN_PERSONNAL_CLAIM
 tag @e remove IN_MY_PERSONNAL_CLAIM
 
+# Select all claims to be processed
 execute as @e[type=!armor_stand] at @s run tag @e[type=armor_stand,tag=PERSONNAL_CLAIM,distance=..8] add PROCESS_PERSONNAL_CLAIM
+execute as @e[type=!armor_stand] at @s run tag @e[type=armor_stand,tag=PERSONNAL_CLAIM16,distance=..16] add PROCESS_PERSONNAL_CLAIM
+execute as @e[type=!armor_stand] at @s run tag @e[type=armor_stand,tag=PERSONNAL_CLAIM32,distance=..32] add PROCESS_PERSONNAL_CLAIM
+
+# Make all selected armor stands process their claim
 execute as @e[type=armor_stand,tag=PROCESS_PERSONNAL_CLAIM] at @s run function claimsystem:apply_personnal_claim
+
+# Unmark armor stands
 tag @e[tag=PROCESS_PERSONNAL_CLAIM] remove PROCESS_PERSONNAL_CLAIM
 
 tag @a[gamemode=survival,tag=IN_PERSONNAL_CLAIM] add PERSONNAL_CLAIM_ADVENTURE
